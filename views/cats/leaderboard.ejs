@@ -1,0 +1,20 @@
+<% layout('boilerplate/layout') -%>
+
+<div class="container">
+<div class="row">
+<h1 class="text-center my-3">Leaderboard</h1>
+<%for(let cat of cats){%>
+    <div class="card m-auto p-2">
+      <%for(let img of cat.images){%>
+        <img class="img-fluid"style="width:100%" src="<%=img.url%>" class="card-img-top" alt="">
+        <%}%>
+        <div class="card-body">
+          <p class="card-text mb-0"><%=cat.name%></p>
+          <p class="my-0">&#10084; <%=cat.likes%></p>
+      </div>
+      </div>
+<%}%>
+</div>
+</div>
+
+

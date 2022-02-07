@@ -1,0 +1,38 @@
+<% layout('boilerplate/layout') -%>
+
+<h1 class="text-center my-3">Who's Cuter? &#9829;</h1>
+
+<div class="container">
+<div class="row">
+    <%for(let cat of cats){%>
+    <div class="col-md-6 d-flex m-auto mb-2 justify-content-center">
+        <form action="/cats/<%=cat._id%>?_method=PUT" method="post">
+            <button class="image-btn">
+                <%for(let img of cat.images){%>
+<img class="vote-image text center" name="like" src="<%=img.url%>" alt="cat-image">
+<%}%>
+</button>
+</form>
+</div>
+    <%}%>  
+</div>
+<div class="row m-5">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link auth mx-3"href="/about">About</a>
+        </li>
+        <li class="nav-item">
+        <%if(!admin){%>
+        <a class="nav-link auth mx-3"href="/login">Login</a>
+    </li>
+        <%}else{%>
+            <li class="nav-item">
+        <a class="nav-link auth mx-3"href="/register">Register</a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link auth mx-3"href="/logout">Logout</a>
+    </li>
+        <%}%>
+    </ul>
+</div>
+</div>

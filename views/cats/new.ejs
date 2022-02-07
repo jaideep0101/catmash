@@ -1,0 +1,22 @@
+<% layout('boilerplate/layout') -%>
+
+<div class="row">
+<h1 class="text-center my-3">Upload Your Cat</h1>
+<div class="col-md-6 offset-md-3 ">
+  <div class="card-body form-card">
+<form action="/cats" method="post" enctype="multipart/form-data" class="validation-form"novalidate>
+<div class="mb-3">
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" name="cat[name]" class="form-control" id="name" required>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input type="file" class="form-control" id="image" name="image" required>
+  </div>
+  <div>
+    <button class="btn">Upload</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
