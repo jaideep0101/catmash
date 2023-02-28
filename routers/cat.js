@@ -5,7 +5,7 @@ const Cat=require("../models/cats");
 const {isLoggedIn,validateCat}=require("../middleware")
 const {cloudinary,storage}=require("../cloudinary/cloudinary")
 const multer=require("multer");
-
+var cloudinary = require('cloudinary');
 const upload=multer({storage})
 
 router.get("/",catchAsync(async(req,res)=>{
